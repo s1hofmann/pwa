@@ -1,0 +1,31 @@
+{
+  "name": "xkcdpwa",
+  "version": "0.0.1",
+  "description": "Let's build a PWA to stay entertained!",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel ./public/index.html",
+    "start-dist": "http-server -c-1 ./dist",
+    "build": "parcel build ./public/index.html --no-source-maps",
+    "clean": "rm ./.cache ./dist -rf"
+  },
+  "keywords": [
+    "xkcd",
+    "pwa",
+    "progressive",
+    "web",
+    "app"
+  ],
+  "author": "Simon Hofmann",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "http-server": "^0.10.0"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "idb": "^2.1.1",
+    "npm": "^6.0.1"
+  }
+}

@@ -266,6 +266,50 @@
 					</ul>
 				</ul>
 			</section>
+			<section>
+				<h2>Service Workers - Background Synchronization</h2>
+				<img class="snippet" src="img/onsync.png" alt="Service worker onsync event">
+			</section>
+			<section>
+				<h2>Service Workers - Background Synchronization</h2>
+				<ul>
+					<li class="fragment">Unfortunately there are quite a few places with poor or no network connectivity</li>
+					<li class="fragment">Service workers allow us to cache requests until connection is re-established</li>
+					<li class="fragment">(Browser support is
+						<a href="https://caniuse.com/#feat=background-sync">really poor</a> at the moment, though)</li>
+				</ul>
+			</section>
+			<section>
+				<h2>Service Workers - Background Synchronization</h2>
+				<ul>
+					<li class="fragment">The
+						<i>`SyncManager`</i> allows us to register sync events with certain tags</li>
+					<li class="fragment">Every time connection re-establishes, a
+						<i>`sync`</i> event is fired and we're able to react to it from within our service worker</li>
+					<li class="fragment">Depending on the events tag, we're able to carry out the appropriate action</li>
+				</ul>
+			</section>
+			<section>
+				<h2>Service Workers - Background Synchronization</h2>
+				<ul>
+					<li class="fragment">Caches are not able to store
+						<i>Request</i> objects</li>
+					<li class="fragment">Workaround:</li>
+					<ol>
+						<li class="fragment">Store request data in IndexedDB</li>
+						<li class="fragment">Build request in sync event and try to send it</li>
+						<li class="fragment">Remove data from IndexedDB on success</li>
+						<li class="fragment">Profit $$$</li>
+					</ol>
+				</ul>
+			</section>
+			<section>
+				<h1>That's it (for now)!</h1>
+				<h3>Thank's for your attention!</h3>
+			</section>
+			<section>
+				<h1>Questions?</h1>
+			</section>
 		</div>
 	</div>
 
@@ -295,6 +339,9 @@
 					}
 				}
 			]
+		});
+		Reveal.configure({
+			slideNumber: true
 		});
 	</script>
 </body>

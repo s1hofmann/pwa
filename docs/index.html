@@ -1,0 +1,302 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>reveal.js</title>
+
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/black.css">
+	<link rel="stylesheet" href="css/own.css">
+
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
+
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<h2>
+					<span class="firstchar">P</span>rogressive
+					<span class="firstchar">W</span>eb
+					<span class="firstchar">A</span>pps</h2>
+				<h4>by</h4>
+				<h3>Simon Hofmann</h3>
+				<h4>-</h4>
+				<h4>2018-05-15</h4>
+			</section>
+			<section>
+				<h1>Overview</h1>
+				<ul>
+					<li>Intro</li>
+					<li>PWAs from 10.000 feet above</li>
+					<li>PWA Basics</li>
+					<li>PWA Details</li>
+					<ul>
+						<li>Webmanifest</li>
+						<li>Service Workers</li>
+					</ul>
+				</ul>
+			</section>
+			<section>
+				<h1>Intro</h1>
+			</section>
+			<section>
+				<h2>Why a PWA?</h2>
+				<ul>
+					<li class="fragment">They're "just" web technologies</li>
+					<li class="fragment">Easy to distribute</li>
+					<li class="fragment">(Almost) Platform independent</li>
+					<li class="fragment">No app-store fee</li>
+				</ul>
+			</section>
+			<section>
+				<h1>PWAs from 10.000 feet above</h1>
+			</section>
+			<section>
+				<h2>PWAs are:</h2>
+				<ul>
+					<li class="fragment">HTTPS</li>
+					<li class="fragment">HTML5, CSS3</li>
+					<li class="fragment">Modern&#8482; JavaScript</li>
+					<li class="fragment">Mobile first, responsive design</li>
+					<li class="fragment">Webmanifests</li>
+					<li class="fragment">Service workers</li>
+				</ul>
+			</section>
+			<section>
+				<h1>PWA Basics</h1>
+			</section>
+			<section>
+				<h2>PWAs provide:</h2>
+				<ul>
+					<li class="fragment">"App-like" UI/UX</li>
+					<li class="fragment">
+						<i>"Install on homescreen"</i> banner</li>
+					<li class="fragment">An auto-generated splash screen</li>
+					<li class="fragment">"Native" features:</li>
+					<ul>
+						<li class="fragment">Offline capability</li>
+						<li class="fragment">Background synchronization</li>
+						<li class="fragment">Push notifications</li>
+					</ul>
+				</ul>
+			</section>
+			<section>
+				<h1>PWA Details I</h1>
+			</section>
+			<section>
+				<h2>Webmanifest</h2>
+				<ul>
+					<li class="fragment">Contains info about your PWA</li>
+					<ul class="fragment">
+						<li>Name</li>
+						<li>Icons</li>
+						<li>Scope</li>
+						<li>Orientation</li>
+						<li>...</li>
+					</ul>
+					<li class="fragment">Makes your PWA installable</li>
+					<li class="fragment">Used to generate the splash screen</li>
+				</ul>
+			</section>
+			<section>
+				<h2>Webmanifest</h2>
+				<img class="snippet" src="img/manifest.png" alt="Example manifest file">
+			</section>
+			<section>
+				<h2>Webmanifest</h2>
+				<img class="snippet" src="img/webmanifest.png" alt="Manifest registration">
+			</section>
+			<section>
+				<h2>Webmanifest</h2>
+				<ul>
+					<li>
+						<a href="https://w3c.github.io/manifest/">Webmanifest Spec</a>
+					</li>
+					<li>
+						<a href="https://developer.mozilla.org/en-US/docs/Web/Manifest">MDN webdoc on Webmanifest</a>
+					</li>
+					<li>
+						<a href="https://caniuse.com/#feat=web-app-manifest">Browser support for app manifests</a>
+					</li>
+				</ul>
+			</section>
+			<section>
+				<h1>PWA Details II</h1>
+			</section>
+			<section>
+				<h2>Service Workers</h2>
+				<ul>
+					<li class="fragment">Just JavaScript</li>
+					<li class="fragment">Runs in a separate thread</li>
+					<ul>
+						<li class="fragment">No DOM access</li>
+					</ul>
+					<li class="fragment">Even runs when:</li>
+					<ul>
+						<li class="fragment">The user has left the page</li>
+						<li class="fragment">The user has closed its browser</li>
+					</ul>
+				</ul>
+			</section>
+			<section>
+				<h2>Service Workers</h2>
+				<ul>
+					<li class="fragment">Service workers act as proxy</li>
+					<li class="fragment">
+						<i>`fetch`</i> events can be intercepted</li>
+					<ul>
+						<li class="fragment">Custom request logic</li>
+						<li class="fragment">Custom responses</li>
+						<li class="fragment">Manual caching</li>
+					</ul>
+					<li class="fragment">Powerful request manipulation</li>
+					<li class="fragment">Requires HTTPS connections (except on localhost)</li>
+				</ul>
+			</section>
+			<section>
+				<h2>Service Workers</h2>
+				<img class="snippet" src="img/register_serviceworker.png" alt="Service worker registration">
+			</section>
+			<section>
+				<h2>Service Workers</h2>
+				<img class="snippet" src="img/capabilities.png" alt="Capabilities object">
+			</section>
+			<section>
+				<h2>Service Workers - Lifecycle</h2>
+				<img class="snippet" src="img/sw_lifecycle.png" alt="Service worker lifecycle">
+			</section>
+			<section>
+				<h2>Service Workers</h2>
+				<ul>
+					<li class="fragment">Service workers are only active after the user reloads the page</li>
+					<li class="fragment">(Though immediate updates can be enabled)</li>
+					<li class="fragment">Instant reload might cause weird behaviour</li>
+				</ul>
+			</section>
+			<section>
+				<h2>Service Workers - Offline Capability</h2>
+				<img class="snippet" src="img/oninstall.png" alt="Service worker oninstall event">
+			</section>
+			<section>
+				<h2>Service Workers - Offline Capability</h2>
+				<ul>
+					<li class="fragment">"App Shell" caching</li>
+					<li class="fragment">Hook into the install event and put all static assets into cache</li>
+					<li class="fragment">Once the page reloads, all static assets are served from cache</li>
+					<ul>
+						<li class="fragment">Faster page loading</li>
+						<li class="fragment">Our static content will be available offline</li>
+					</ul>
+				</ul>
+			</section>
+			<section>
+				<h2>Service Workers - Cache Versioning</h2>
+				<ul>
+					<li class="fragment">Cached assets will be served from cache</li>
+					<li class="fragment">In case of an update, our cache serves outdated assets</li>
+					<ul>
+						<li class="fragment">Caches can be named</li>
+						<li class="fragment">Versioned cache names avoid outdated caches</li>
+						<li class="fragment">Cache version increases as soon as we update data</li>
+					</ul>
+				</ul>
+			</section>
+			<section>
+				<h2>Service Workers - Cache Cleanup</h2>
+				<img class="snippet" src="img/onactivate.png" alt="Service worker onactivate event">
+			</section>
+			<section>
+				<h2>Service Workers - Cache Cleanup</h2>
+				<ul>
+					<li class="fragment">Once the
+						<i>`onactivate`</i> event fires, our updated service worker is active</li>
+					<li class="fragment">Old caches can be evicted, since we don't need them any longer</li>
+					<li class="fragment">Clear all caches which do no match the current version</li>
+				</ul>
+			</section>
+			<section>
+				<h2>Service Workers - Dynamic Caching</h2>
+				<img class="snippet" src="img/onfetch.png" alt="Service worker onfetch event">
+			</section>
+			<section>
+				<h2>Service Workers - Dynamic Caching</h2>
+				<ul>
+					<li class="fragment">It's also possible to cache dynamic requests</li>
+					<li class="fragment">By hooking into the
+						<i>`onfetch`</i> event, we're able to manually cache responses</li>
+				</ul>
+			</section>
+			<section>
+				<h2>Service Workers - Dynamic Data Caching</h2>
+				<img class="snippet" src="img/contentcache.png" alt="Service worker content cache">
+			</section>
+			<section>
+				<h2>Service Workers - Dynamic Data Caching</h2>
+				<ul>
+					<li class="fragment">Service workers can store dynamic data like JSON in IndexedDB</li>
+					<li class="fragment">This allows to return custom Response objects to return cached dynamic data</li>
+					<li class="fragment">Caching dynamic data provides true offline availability</li>
+				</ul>
+			</section>
+			<section>
+				<h2>Service Workers - Caching Best Practices</h2>
+				<ul>
+					<li class="fragment">There exists various tools and strategies to implement caching</li>
+					<ul>
+						<li class="fragment">
+							<a href="https://serviceworke.rs/">Service Worker Cookbook</a>
+						</li>
+						<li class="fragment">
+							<a href="https://developers.google.com/web/tools/workbox/">Workbox</a>
+						</li>
+					</ul>
+				</ul>
+			</section>
+		</div>
+	</div>
+
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.js"></script>
+
+	<script>
+		// More info about config & dependencies:
+		// - https://github.com/hakimel/reveal.js#configuration
+		// - https://github.com/hakimel/reveal.js#dependencies
+		Reveal.initialize({
+			dependencies: [{
+					src: 'plugin/markdown/marked.js'
+				},
+				{
+					src: 'plugin/markdown/markdown.js'
+				},
+				{
+					src: 'plugin/notes/notes.js',
+					async: true
+				},
+				{
+					src: 'plugin/highlight/highlight.js',
+					async: true,
+					callback: function () {
+						hljs.initHighlightingOnLoad();
+					}
+				}
+			]
+		});
+	</script>
+</body>
+
+</html>

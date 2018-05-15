@@ -66,6 +66,13 @@
 				<h1>PWAs from 10.000 feet above</h1>
 			</section>
 			<section>
+				<h2>
+					<i>"Any web app could be a PWA if you're brave enough!"</i>
+				</h2>
+				<h4>-</h4>
+				<h3>Me - today</h3>
+			</section>
+			<section>
 				<h2>PWAs are:</h2>
 				<ul>
 					<li class="fragment">HTTPS</li>
@@ -229,8 +236,27 @@
 				</ul>
 			</section>
 			<section>
-				<h2>Service Workers - Dynamic Caching</h2>
+				<h2>Service Workers - Intercepting Requests</h2>
 				<img class="snippet" src="img/onfetch.png" alt="Service worker onfetch event">
+			</section>
+			<section>
+				<h2>Detour - Installable Apps</h2>
+				<ul>
+					<li class="fragment">At this very moment our PWA becomes
+						<i>"installable"</i>
+					</li>
+					<li class="fragment">This requires:</li>
+					<ul>
+						<li class="fragment">HTTPS connection</li>
+						<li class="fragment">Webmanifest with name, short_name and icons</li>
+						<li class="fragment">Installable service worker with
+							<i>`onfetch`</i> listener</li>
+						<li class="fragment">Install popup will be shown if criteria are met</li>
+					</ul>
+				</ul>
+			</section>
+			<section>
+				<h2>Back to topic...</h2>
 			</section>
 			<section>
 				<h2>Service Workers - Dynamic Caching</h2>
@@ -286,7 +312,7 @@
 						<i>`SyncManager`</i> allows us to register sync events with certain tags</li>
 					<li class="fragment">Every time connection re-establishes, a
 						<i>`sync`</i> event is fired and we're able to react to it from within our service worker</li>
-					<li class="fragment">Depending on the events tag, we're able to carry out the appropriate action</li>
+					<li class="fragment">Depending on the event's tag, we're able to carry out the appropriate action</li>
 				</ul>
 			</section>
 			<section>

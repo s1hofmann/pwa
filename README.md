@@ -1,13 +1,9 @@
-# xkcdpwa
+# PWAs
 
-Ok, what's behind this seemingly random concatenation of characters?
+I recently started digging into PWAs and front end development in general.
 
-This repo should serve as an e2e example to implement a PWA.
-
-And since I really like Randall Munroe's comics, we're building an XKCD viewer.
+In this repo I wrote up some things about PWAs for a talk at my job.
 
 ## Slides
-
-I also prepared some slides which will be updated on the fly.
 
 You can find them [here](https://s1hofmann.github.io/pwa/).

@@ -10,4 +10,4 @@ And since I really like Randall Munroe's comics, we're building an XKCD viewer.
 
 I also prepared some slides which will be updated on the fly.
 
-You can find them [here](https://s1hofmann.github.io/xkcdpwa/).
+You can find them [here](https://s1hofmann.github.io/pwa/).
